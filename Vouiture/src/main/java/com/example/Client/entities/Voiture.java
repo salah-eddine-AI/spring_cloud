@@ -1,5 +1,6 @@
 package com.example.Client.entities;
 
+import ch.qos.logback.core.net.server.Client;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +30,16 @@ public class Voiture {
 
     public Voiture() {
     }
+
+    // Constructor for Voiture (Match this signature)
+    public Voiture(String marque, String matricule, String model, Long idClient, Client client) {
+        this.marque = marque;
+        this.matricule = matricule;
+        this.model = model;
+        this.idClient = idClient;
+        this.client = client;
+    }
+
 
     public Voiture(Long id, String marque, String matricule, String model, Long idClient, Client client) {
         this.id = id;
